@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>CALCULATOR</title>
+        <style>
+            body
+            {
+                background-image:url("background.jpg");
+            }
+            
+            .box 
+            {
+                height: 500px;
+                width: 330px;
+                margin-left: 650px;
+                margin-top: 80px;
+                background-color: #64c5d6;
+                border-radius: 20px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.1)
+            }
+            
+            .displayDesign
+            {
+                
+                width:330;
+                background-color:#7ef394;
+                border-top-left-radius:18px;
+                border-top-right-radius:18px;
+                font-weight:700;
+                text-align:right;
+                height:120px;
+                font-size:30;
+                color:#f98170;
+                float:right;
+                border:none;
+                padding-right;20px;
+            }
+            .buttondesign
+            {
+                width: 50px;
+                height: 50px;
+                background: #ddf7d9;
+                font-size: 20px;
+                font-weight: 700;
+                color: #000000;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                margin: 20px 5px 0px 20px;
+                outline: none;
+            }
+
+        </style>
+        <script>
+            
+            function display(data) 
+            {
+                document.getElementById('out').value += data;
+            }
+            function solve() 
+            {
+                var exp = document.getElementById('out').value;
+                var soln = eval(exp);
+                document.getElementById('out').value = soln;
+            }
+            function ce()
+            {
+                var txt=document.getElementById('out').value;
+                txt=txt.slice(0,-1);
+                document.getElementById('out').value=txt;
+            }
+            function c()
+            {
+                document.getElementById('out').value="";
+            }
+
+        </script>
+        
+    </head>
+    <body>
+        <div class="box">
+            <input type="text" id="out" class="displaydesign"><br>
+            <button type="button" class="buttondesign" onclick="c()">C</button>
+            <button type="button" class="buttondesign" onclick="ce()">CE</button>
+            <button type="button" class="buttondesign" onclick="display('%')">%</button>
+            <button type="button" class="buttondesign" onclick="display('/')">/</button><br>
+            <button type="button" class="buttondesign" onclick="display('7')">7</button>
+            <button type="button" class="buttondesign" onclick="display('8')">8</button>
+            <button type="button" class="buttondesign" onclick="display('9')">9</button>
+            <button type="button" class="buttondesign" onclick="display('*')">*</button><br>
+            <button type="button" class="buttondesign" onclick="display('4')">4</button>
+            <button type="button" class="buttondesign" onclick="display('5')">5</button>
+            <button type="button" class="buttondesign" onclick="display('6')">6</button>
+            <button type="button" class="buttondesign" onclick="display('-')">-</button><br>
+            <button type="button" class="buttondesign" onclick="display('1')">1</button>
+            <button type="button" class="buttondesign" onclick="display('2')">2</button>
+            <button type="button" class="buttondesign" onclick="display('3')">3</button>
+            <button type="button" class="buttondesign" onclick="display('+')">+</button><br>
+            <button type="button" class="buttondesign" onclick="display('.')">.</button>
+            <button type="button" class="buttondesign" onclick="display('0')">0</button>
+            <button type="button" class="buttondesign" onclick="display('00')">00</button>
+            <button type="button" class="buttondesign" onclick="solve('')">=</button><br>
+        </div>
+       
+    </body>
+</html>
